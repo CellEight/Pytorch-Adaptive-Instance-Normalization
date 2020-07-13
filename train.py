@@ -75,17 +75,17 @@ if __name__ == "__main__":
     def styleHook(i, module, input, output):
         global activations
         activations[i] = output
+
     def debugHook(i, module, input, output):
         global activations
         debug_activations[i] = output
+
     # establish hooks in vgg
     for i, layer in enumerate(style_layers):
         model.vgg._modules[layer].register_forward_hook(partial(styleHook,i))
     for i, layer in enumerate(debug_layers):
         model.dec._modules[str(layer)].register_forward_hook(partial(debugHook,i))
-    mean=torch.Tensor([0.485, 0.456, 0.406]).unsqueeze(0)
-    std=torch.Tensor([0.229, 0.224, 0.225]).unsqueeze(0)
-    normal = nn.BatchNorm2d(3)
+
 
     for epoch in range(epochs):
         i=0
@@ -118,5 +118,4 @@ if __name__ == "__main__":
             save_image(torch.sigmoid(style_batch), f"./tmp/{epoch}_{i}_s.png",2)
         #save_image(torch.sigmoid(output), f"./tmp/o_{epoch}_{i}.png")
         print(f'Epoch: [{epoch}/{epochs}],  Loss: {loss}')
-        if epoch+1//10 == 0:
-            torch.save(model, 'adain_model')
+        torch.save(model, 'adain_model')
