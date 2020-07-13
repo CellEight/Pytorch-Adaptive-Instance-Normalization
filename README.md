@@ -27,6 +27,9 @@ Every epoch the model will be saved to a file called `adain_model`.
 
 ## To Do
 * Add automatic gpu/cpu selection
+* Add explanatory text to loss printout
+* Implement Bias correction on moving average loss
+* Update default hyperparameters to match that of Huang
 * Train the model for longer and upload better pretrained weights
 * Add command line options for hyperparameters
 * Make `requirements.txt` file
