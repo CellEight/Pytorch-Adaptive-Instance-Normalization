@@ -33,7 +33,7 @@ if __name__ == "__main__":
     content_img = loadImage(sys.argv[1])
     style_img = loadImage(sys.argv[2])
 
-    model = torch.load('adain_model_good2')
+    model = torch.load('adain_model')
 
     output_img = model(content_img, style_img)
     save_image(output_img, 'output.jpg')
