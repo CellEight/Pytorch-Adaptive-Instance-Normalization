@@ -26,7 +26,7 @@ To actully train the model just run `python -i train.py` which will start traini
 Every epoch the model will be saved to a file called `adain_model`.
 
 ## To Do
--Train the model for longer and upload better pretrained weights
--Add command line options for hyperparameters
--Make `requirements.txt` file
--Add more advanced runtime style interpolation and masking features
+*Train the model for longer and upload better pretrained weights
+*Add command line options for hyperparameters
+*Make `requirements.txt` file
+*Add more advanced runtime style interpolation and masking features from the paper
