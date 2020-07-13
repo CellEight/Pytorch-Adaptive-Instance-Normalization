@@ -30,3 +30,4 @@ Every epoch the model will be saved to a file called `adain_model`.
 * Add command line options for hyperparameters
 * Make `requirements.txt` file
 * Add more advanced runtime style interpolation and masking features from the paper
+* Add some examples to this readme
